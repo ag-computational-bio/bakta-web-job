@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/mariusdieckmann/datastager/datastager:0.1.1-alpha as stager
+FROM quay.io/mariusdieckmann/datastager:latest as stager
 
 FROM oschwengers/bakta
 
