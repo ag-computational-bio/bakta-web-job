@@ -15,8 +15,22 @@ spec:
           - mountPath: /cache
             name: cache-volume
         env:
+          - name: DownloaderEnvConfig
+            value: "download -b baktatest -k data/demo-fasta.fasta -d /data -e s3.computational.bio.uni-giessen.de"
           - name: BaktaEnvConfig
-            value: "--db /db /cache/demo-fasta.fasta"
+            value: "--db /db/test/db-mock /data/demo-fasta.fasta"
+          - name: UploaderEnvConfig
+            value: "upload -e s3.computational.bio.uni-giessen.de -k data/result/1 -b baktatest -f /results.tar.gz"
+          - name: AWS_ACCESS_KEY_ID 
+            valueFrom:
+              secretKeyRef:
+                name: s3
+                key: AccessKey
+          - name: AWS_SECRET_ACCESS_KEY 
+            valueFrom:
+              secretKeyRef:
+                name: s3
+                key: SecretKey 
       volumes:
         - name: cache-volume
           emptyDir: {}
