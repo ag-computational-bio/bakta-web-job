@@ -1,6 +1,6 @@
 FROM quay.io/mariusdieckmann/datastager:latest as stager
 
-FROM oschwengers/bakta
+FROM quay.io/bakta/bakta
 
 COPY --from=stager /DataStager /bin
 COPY run.sh /bin
