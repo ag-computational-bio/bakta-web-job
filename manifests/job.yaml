@@ -9,6 +9,10 @@ spec:
       containers:
       - name: bakta-job
         image: quay.io/mariusdieckmann/bakta-web-job
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/bash","-c","/bin/DataStager update"]
         volumeMounts:
           - mountPath: /db
             name: database-pb
