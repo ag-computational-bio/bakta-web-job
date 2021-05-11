@@ -1,4 +1,4 @@
-FROM harbor.computational.bio.uni-giessen.de/bakta/datastager:latest as stager
+FROM harbor.computational.bio.uni-giessen.de/bakta/datastager as stager
 
 
 FROM oschwengers/bakta:v1.0
