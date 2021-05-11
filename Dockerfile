@@ -1,6 +1,6 @@
-FROM quay.io/mariusdieckmann/datastager:latest as stager
+FROM harbor.computational.bio.uni-giessen.de/bakta/datastager:latest as stager
 
-FROM quay.io/bakta/bakta:parallel-test
+FROM oschwengers/bakta:v1.0
 
 COPY --from=stager /DataStager /bin
 COPY run.sh /bin
