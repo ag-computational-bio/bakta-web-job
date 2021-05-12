@@ -9,8 +9,8 @@ trap cleanup EXIT
 mkdir /data
 mkdir /output
 
-/bin/DataStager "$DownloaderEnvConfig"
-/entrypoint.sh "$BaktaEnvConfig"
-/bin/DataStager "$UploaderEnvConfig"
+/bin/DataStager $DownloaderEnvConfig
+/entrypoint.sh $BaktaEnvConfig
+/bin/DataStager $UploaderEnvConfig
 /bin/DataStager update
 echo "after possible failure"
