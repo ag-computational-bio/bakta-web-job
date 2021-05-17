@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sleep 3600
 set -eou pipefail
 
 function cleanup {
