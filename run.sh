@@ -2,6 +2,7 @@
 set -eou pipefail
 
 function cleanup {
+    sleep 3600
     /bin/DataStager update
 }
 trap cleanup EXIT
