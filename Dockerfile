@@ -8,4 +8,4 @@ COPY run.sh /bin
 
 RUN chmod 555 /bin/run.sh
 
-CMD ["/bin/run.sh"]
+ENTRYPOINT ["/bin/run.sh"]
