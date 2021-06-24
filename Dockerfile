@@ -14,5 +14,5 @@ COPY run.sh /bin
 
 RUN chmod 555 /bin/run.sh
 
-ENTRYPOINT ["/linkerd-await", "--shutdown", "--"]
+ENTRYPOINT ["/bin/linkerd-await", "--shutdown", "--"]
 CMD  ["/bin/run.sh"]
