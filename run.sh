@@ -9,6 +9,7 @@ trap cleanup EXIT
 mkdir /data
 mkdir /output
 
+/bin/DataStager update
 /bin/DataStager $DownloaderEnvConfig
 /entrypoint.sh $BaktaEnvConfig
 /bin/DataStager $UploaderEnvConfig
