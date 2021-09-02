@@ -6,7 +6,7 @@ RUN curl -sSLo /tmp/linkerd-await https://github.com/linkerd/linkerd-await/relea
     chmod 755 /tmp/linkerd-await
 
 
-FROM oschwengers/bakta:v1.1
+FROM oschwengers/bakta:v1.1.1
 COPY --from=linkerd /tmp/linkerd-await /bin/linkerd-await
 
 COPY --from=stager /DataStager /bin
