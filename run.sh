@@ -16,4 +16,4 @@ sleep 10
 /entrypoint.sh $BaktaEnvConfig
 /bin/DataStager $UploaderEnvConfig
 /bin/DataStager update
-echo "after possible failure"
+echo "job finished"
