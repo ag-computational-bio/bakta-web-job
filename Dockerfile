@@ -11,8 +11,10 @@ COPY --from=linkerd /tmp/linkerd-await /bin/linkerd-await
 
 COPY --from=stager /DataStager /bin
 COPY run.sh /bin
+COPY exec.py /bin
 
 RUN chmod 555 /bin/run.sh
+RUN chmod 555 /bin/exec.py
 
 ENTRYPOINT ["/bin/linkerd-await", "--shutdown", "--"]
 CMD  ["/bin/run.sh"]
