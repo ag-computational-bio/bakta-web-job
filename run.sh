@@ -18,7 +18,7 @@ sleep 10
 if [[ ! -z "${DEBUG}" ]]; then echo "Starting job with configuration \"${BaktaEnvConfig}\""; fi
 source /opt/conda/bashrc
 micromamba activate
-bakta $BaktaEnvConfig
+exec.py --json "$BaktaEnvConfig"
 /bin/DataStager $UploaderEnvConfig
 /bin/DataStager update
 echo "job finished"
